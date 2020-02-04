@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68d37df7-1cb3-460c-a936-7ef75c3ff8f5" name="Default Changelist" comment="" />
+    <list default="true" id="68d37df7-1cb3-460c-a936-7ef75c3ff8f5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoListFooter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListFooter.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoListHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListHeader.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoListTask.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListTask.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoListTasks.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListTasks.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +25,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1WDCNfoDWW4WmToWVe4QJA93mCI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -23,6 +37,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -63,6 +78,16 @@
       <workItem from="1578898541492" duration="16000" />
       <workItem from="1578929636064" duration="12691000" />
       <workItem from="1578994834309" duration="1274000" />
+      <workItem from="1579034272203" duration="2068000" />
+      <workItem from="1579405231942" duration="1083000" />
+      <workItem from="1579534158358" duration="9450000" />
+      <workItem from="1579936810321" duration="3862000" />
+      <workItem from="1580046774778" duration="13000" />
+      <workItem from="1580138167761" duration="17857000" />
+      <workItem from="1580396266605" duration="3523000" />
+      <workItem from="1580408099558" duration="2429000" />
+      <workItem from="1580469593896" duration="40000" />
+      <workItem from="1580473656517" duration="5173000" />
     </task>
     <servers />
   </component>
@@ -74,17 +99,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="210" y="274" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578939767985" />
-    <state x="260" y="282" key="FileChooserDialogImpl" timestamp="1578990230997">
+    <state x="260" y="282" key="FileChooserDialogImpl" timestamp="1580469632207">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="260" y="282" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1578990230997" />
+    <state x="260" y="282" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1580469632207" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/TodoListTasks.jsx</url>
-          <line>17</line>
+          <line>22</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

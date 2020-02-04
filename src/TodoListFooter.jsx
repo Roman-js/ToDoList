@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from "./Button";
 
 
 
@@ -12,9 +13,21 @@ class TodoListFooter extends React.Component  {
 
         return (
             <div className="todoList-footer">
-                <button className={classForAll}>All</button>
-                <button className={classForCompleted}>Completed</button>
-                <button className={classForActive}>Active</button>
+                <Button title={'All'}
+                        btnClass={classForAll}
+                        onClickFn={() => {this.props.changeFilter('All')}}
+                />
+                <Button title={'Completed'}
+                        btnClass={classForCompleted}
+                        onClickFn={() => {this.props.changeFilter('Completed')}}
+                />
+                <Button title={'Active'}
+                        btnClass={classForActive}
+                        onClickFn={() => {this.props.changeFilter('Active')}}
+                />
+                {/*<button onClick={ () => {this.props.changeFilter('All')}} className={classForAll}>All</button>*/}
+                {/*<button onClick={ () => {this.props.changeFilter('Completed')}} className={classForCompleted}>Completed</button>*/}
+                {/*<button onClick={ () => {this.props.changeFilter('Active')}} className={classForActive}>Active</button>*/}
             </div>
 
         );
