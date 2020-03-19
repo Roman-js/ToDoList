@@ -1,76 +1,115 @@
 import React from 'react';
 import './App.css';
-import TodoListHeader from "./TodoListHeader";
-import TodoListTasks from "./TodoListTasks";
-import TodoListFooter from "./TodoListFooter";
+import TodoList from "./TodoList";
+import AddNewItemForm from "./AddNewItemForm";
+import {connect} from "react-redux";
+import {ADD_TODOLIST, addTodolistAC, setTodoListAC} from "./reducer";
+import axios from 'axios'
+
 
 class App extends React.Component {
 
-
+    nextTodoListId = 0;
     state = {
-        tasks: [
-            {title: 'CSS', isDone: true, priority: 'high'},
-            {title: 'JS', isDone: true, priority: 'low'},
-            {title: 'HTML', isDone: false, priority: 'high'},
-            {title: 'React', isDone: false, priority: 'low'},
-            {title: 'Angular', isDone: true, priority: 'high'},
-        ],
-        filterValue: 'All'
-    };
+        todolists: [
 
-    changeStatus = (task, isDone) => {
-        let newTask = this.state.tasks.map(t => {
-            if (t != task) {
-                return t
-            } else {
-                return {...t, isDone: isDone}
-            }
-        });
-        this.setState({tasks: newTask})
-    };
+        ]
+    }
+    componentDidMount() {
+        this.restoreState()
+    }
 
-    changeFilter = (newFilterValue) => {
-        this.setState({filterValue: newFilterValue})
-    };
 
-    addTask = (newTitle) => {
-        let newTask = {
-            title: newTitle,
-            isDone: false,
-            priority: 'low'
-        };
-        let newTasks = [...this.state.tasks, newTask];
-        this.setState({tasks: newTasks})
+    restoreState = () => {
+        axios.get("https://social-network.samuraijs.com/api/1.1/todo-lists", {withCredentials: true})
+            .then(res => {
+                //debugger
+                console.log(res.data);
+                this.props.setTodolist(res.data)
+            });
+    }
 
-    };
+
+    addTodolist = (title) =>{
+        axios.post("https://social-network.samuraijs.com/api/1.1/todo-lists",
+            {title: title},
+            {withCredentials: true, headers: {'API-KEY': '0c05e3f5-1bb0-4c63-a612-ce4b6957f3bd'}}
+            )
+            .then(res=> {
+                debugger;
+                let todolist = res.data.data.item;
+                this.props.addTodolist(todolist)
+            })
+       //  let newItem ={
+       //      title: title,
+       //      id:this.nextTodoListId,
+       //      tasks: []
+       //  };
+       // this.props.addTodolist(newItem)
+       //  this.nextTodoListId++
+    }
+
+
+
+    saveState =() =>{
+
+        let stateAsString = JSON.stringify(this.state.todolists)
+        localStorage.setItem('todolists', stateAsString)
+    }
+
+    _restoreState = () =>{
+
+        let stateAsString = localStorage.getItem('todolists')
+
+        if (stateAsString !== null){
+        let todolists = JSON.parse(stateAsString)
+
+        this.setState( {todolists})
+
+        }
+    }
+
+
     render = () => {
+//debugger;
+        let todolist = this.props.todolists.map(tl =><TodoList id={tl.id} title={tl.title} tasks={tl.tasks}/>);
+
         return (
-            <div className="App">
-                <div className="todoList">
-                    <TodoListHeader addTask={this.addTask}/>
-                    <TodoListTasks
-                        changeStatus={this.changeStatus}
-                        tasks={this.state.tasks.filter(t => {
-                            if (this.state.filterValue === 'All') {
-                                return true;
-                            }
-                            if (this.state.filterValue === 'Active') {
-                                return t.isDone === false;
-                            }
-                            if (this.state.filterValue === 'Completed') {
-                                return t.isDone === true;
-                            }
-                        })}/>
-                    <TodoListFooter
-                        filterValue={this.state.filterValue}
-                        changeFilter={this.changeFilter}
-                    />
+
+            <>
+                <div>
+                    <AddNewItemForm addItem={this.addTodolist}/>
                 </div>
-            </div>
+
+                <div className="App">
+                    {todolist}
+
+
+                </div>
+            </>
 
         );
     }
 }
 
-export default App;
+const mapStateToProps = (state) =>{
+
+    return {
+        todolists: state.todolists
+    }
+}
+const mapDispatchToProps=(dispatch)=>{
+    return {
+        addTodolist: (newTodolist)=>{
+                dispatch(addTodolistAC(newTodolist))
+            },
+            setTodolist: (todolists)=>{
+            dispatch(setTodoListAC(todolists))
+            }
+        }
+    }
+
+const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App);
+
+export default ConnectedApp;
 
