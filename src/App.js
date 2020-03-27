@@ -3,8 +3,9 @@ import './App.css';
 import TodoList from "./TodoList";
 import AddNewItemForm from "./AddNewItemForm";
 import {connect} from "react-redux";
-import {ADD_TODOLIST, addTodolistAC, setTodoListAC} from "./reducer";
+import {ADD_TODOLIST, addTodolist, setTodoList} from "./reducer";
 import axios from 'axios'
+import {api} from "./api";
 
 
 class App extends React.Component {
@@ -21,20 +22,18 @@ class App extends React.Component {
 
 
     restoreState = () => {
-        axios.get("https://social-network.samuraijs.com/api/1.1/todo-lists", {withCredentials: true})
+       api.restoreTodolists()
             .then(res => {
                 //debugger
                 console.log(res.data);
-                this.props.setTodolist(res.data)
+                this.props.setTodoList(res.data)
             });
     }
 
 
     addTodolist = (title) =>{
-        axios.post("https://social-network.samuraijs.com/api/1.1/todo-lists",
-            {title: title},
-            {withCredentials: true, headers: {'API-KEY': '0c05e3f5-1bb0-4c63-a612-ce4b6957f3bd'}}
-            )
+        debugger
+        api.createTodolist(title)
             .then(res=> {
                 debugger;
                 let todolist = res.data.data.item;
@@ -98,18 +97,18 @@ const mapStateToProps = (state) =>{
         todolists: state.todolists
     }
 }
-const mapDispatchToProps=(dispatch)=>{
-    return {
-        addTodolist: (newTodolist)=>{
-                dispatch(addTodolistAC(newTodolist))
-            },
-            setTodolist: (todolists)=>{
-            dispatch(setTodoListAC(todolists))
-            }
-        }
-    }
+// const mapDispatchToProps=(dispatch)=>{
+//     return {
+//         addTodolist: (newTodolist)=>{
+//                 dispatch(addTodolistAC(newTodolist))
+//             },
+//             setTodolist: (todolists)=>{
+//             dispatch(setTodoListAC(todolists))
+//             }
+//         }
+//     }
 
-const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App);
+const ConnectedApp = connect(mapStateToProps, {addTodolist, setTodoList})(App);
 
 export default ConnectedApp;
 

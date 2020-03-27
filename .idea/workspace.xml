@@ -2,20 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68d37df7-1cb3-460c-a936-7ef75c3ff8f5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/AddNewItemForm.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TodoListTitle.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoListFooter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListFooter.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TodoListHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListHeader.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TodoListTask.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListTask.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoListTasks.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListTasks.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoListTitle.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListTitle.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,9 +38,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../project02/social_network" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -114,22 +109,43 @@
       <workItem from="1584033652781" duration="208000" />
       <workItem from="1584543412342" duration="15743000" />
       <workItem from="1584629335389" duration="7015000" />
-      <workItem from="1584636734200" duration="2032000" />
+      <workItem from="1584636734200" duration="2167000" />
+      <workItem from="1585148237526" duration="25072000" />
     </task>
+    <task id="LOCAL-00001" summary="Connect to server and update data through server">
+      <created>1584640665766</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1584640665766</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Connect to server and update data through server" />
+    <option name="LAST_COMMIT_MESSAGE" value="Connect to server and update data through server" />
   </component>
   <component name="WindowStateProjectService">
     <state x="210" y="274" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1578939767985">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="210" y="274" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578939767985" />
-    <state x="260" y="282" key="FileChooserDialogImpl" timestamp="1583948170445">
+    <state x="585" y="115" key="CommitChangelistDialog2" timestamp="1584640664772">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="260" y="282" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583948170445" />
+    <state x="585" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584640664772" />
+    <state x="260" y="282" key="FileChooserDialogImpl" timestamp="1585231387236">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="260" y="282" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585231387236" />
+    <state x="221" y="155" key="refactoring.ChangeSignatureDialog" timestamp="1585155486463">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="221" y="155" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585155486463" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -138,6 +154,12 @@
           <url>file://$PROJECT_DIR$/src/TodoListTasks.jsx</url>
           <line>26</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/reducer.js</url>
+          <line>130</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
