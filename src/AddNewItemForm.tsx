@@ -2,15 +2,15 @@ import React from 'react';
 import TodoListTitle from "./TodoListTitle";
 
 
-class AddNewItemForm extends React.Component {
 
-    state={
+class AddNewItemForm extends React.Component<OwnPropsType, StateType> {
+
+    state: StateType = {
         error: false,
         title: ''
     };
 
 
-      //  newTaskTitleRef = React.createRef();
 
     onAddItemClick = () => {
        // let newTitle = this.newTaskTitleRef.current.value;
@@ -24,14 +24,15 @@ class AddNewItemForm extends React.Component {
             this.props.addItem(newTitle);
         }
 
+
     };
-    onTitleChanged = (e) =>{
+    onTitleChanged = (e: React.FormEvent<HTMLInputElement>) =>{
         let newTitle = e.currentTarget.value;
         this.setState({
             error: false,
             title: newTitle})
     };
-    onAddItemEnterPress = (e) =>{
+    onAddItemEnterPress = (e: any) =>{
         if(e.key === 'Enter'){
             this.onAddItemClick();
         }
@@ -59,5 +60,14 @@ class AddNewItemForm extends React.Component {
     }
 }
 
-export default AddNewItemForm;
 
+type StateType = {
+    error: boolean
+    title: string
+}
+type OwnPropsType = {
+    addItem: (newTitle: string)=>void
+}
+
+
+export default AddNewItemForm;

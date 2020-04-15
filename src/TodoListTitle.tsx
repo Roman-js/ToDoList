@@ -1,7 +1,13 @@
 import React from 'react'
-import {api} from "./api";
 
-class TodoListTitle extends React.Component {
+type OwnPropsType = {
+    title: string
+    todoListId: string
+    changeTitleTC: (todoListId: string, currentTitle: string)=>void
+    deleteTodolist: ()=>void
+}
+
+class TodoListTitle extends React.Component <OwnPropsType>{
 
     state = {
         editMode: false,
@@ -20,18 +26,19 @@ class TodoListTitle extends React.Component {
 //     this.props.changeTask(task);
     deactivateEditMode = ()=>{
         this.setState({editMode:false})
+        this.props.changeTitleTC(this.props.todoListId, this.state.currentTitle)
 
-        api.changeTodolistTitle(this.props.todoListId, this.state.currentTitle)
-            .then(res=>{
-                debugger
-                if(res.data.resultCode===0){
-                    this.props.changeTitleTodolist(this.props.todoListId, this.state.currentTitle) //     let task = res.data.data.item; //this.state.currentTitle
-                }
-            })
+        // api.changeTodolistTitle(this.props.todoListId, this.state.currentTitle)
+        //     .then(res=>{
+        //         debugger
+        //         if(res.data.resultCode===0){
+        //             this.props.changeTitleTodolist(this.props.todoListId, this.state.currentTitle) //     let task = res.data.data.item; //this.state.currentTitle
+        //         }
+        //     })
 
 
     }
-    titleChanged = (e) =>{
+    titleChanged = (e: React.FormEvent<HTMLInputElement>) =>{
         this.setState({currentTitle: e.currentTarget.value})
     }
     render() {

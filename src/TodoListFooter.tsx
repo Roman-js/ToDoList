@@ -1,11 +1,19 @@
 import React from 'react';
 import Button from "./Button";
 
+type StateType = {
+    isHidden: boolean
+}
+type OwnPropsType = {
+    changeFilter: (incoming:string)=>void
+    filterValue: string
+}
+
+class TodoListFooter extends React.Component<OwnPropsType>  {
 
 
-class TodoListFooter extends React.Component  {
 
-    state = {
+    state: StateType = {
         isHidden: false
     };
 

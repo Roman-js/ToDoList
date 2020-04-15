@@ -4,6 +4,11 @@
   "private": true,
   "homepage": "https://Roman-js.github.io/ToDoList",
   "dependencies": {
+    "@types/jest": "^25.2.1",
+    "@types/node": "^13.11.1",
+    "@types/react": "^16.9.33",
+    "@types/react-dom": "^16.9.6",
+    "@types/react-redux": "^7.1.7",
     "add": "^2.0.6",
     "axios": "^0.19.2",
     "gh-pages": "^2.2.0",
@@ -11,7 +16,9 @@
     "react-dom": "^16.8.6",
     "react-redux": "^7.2.0",
     "react-scripts": "3.0.1",
-    "redux": "^4.0.5"
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "typescript": "^3.8.3"
   },
   "scripts": {
     "start": "react-scripts start",
