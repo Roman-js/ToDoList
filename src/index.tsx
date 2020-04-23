@@ -8,7 +8,7 @@ import store from "./store";
 
 ReactDOM.render(
     <Provider store={store}>
-    <App />
+    <App todolists={[]}/>
     </Provider>
     , document.getElementById('root'));
 

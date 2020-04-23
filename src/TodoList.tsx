@@ -72,26 +72,14 @@ class TodoList extends React.Component<PropsType, StateType> {
 
     changeTask = (taskId: string, obj: object) => {
 
-        // let todoListId = this.props.id;
-        // let updateTask: UpdateTaskType = {taskId, title: status, status: status };
-        // this.props.changeTaskTC(todoListId, taskId, updateTask)
 
         let changedTask = this.props.tasks.find(task => {
-            debugger
+
             return task.id === taskId
         });
         let task = {...changedTask, ...obj};
 
-        this.props.changeTaskTC(taskId, this.props.id, task, obj);
-        // debugger
-        // api.putTask(todoListId, task.id, updateTask )
-        //     .then(res=>{
-        //         if(res.data.resultCode === 0) {
-        //             let task = res.data.data.item;
-        //             this.props.changeTask(task);
-        //
-        //         };
-        //     })
+        this.props.changeTaskTC(this.props.id, taskId, task, obj);
 
     }
 
@@ -102,7 +90,7 @@ class TodoList extends React.Component<PropsType, StateType> {
 
     changeTitle = (task: string, newTitle: string) => {
 
-        this.changeTask(task, {newTitle})
+        this.changeTask(task, {title:newTitle})
 
     };
 

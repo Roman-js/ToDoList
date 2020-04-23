@@ -2,7 +2,7 @@ import React from 'react';
 
 
 
-class Button extends React.Component  {
+class Button extends React.Component <OwnPropsType> {
 
     render = () => {
         return (
@@ -17,5 +17,10 @@ class Button extends React.Component  {
     }
 }
 
-export default Button;
 
+export default Button;
+type OwnPropsType={
+    onClickFn: ()=>void
+    btnClass: string
+    title: string
+}
