@@ -1,5 +1,6 @@
 import React from 'react';
-import Button from "./Button";
+import {Button} from "@material-ui/core";
+
 
 type StateType = {
     isHidden: boolean
@@ -33,18 +34,15 @@ class TodoListFooter extends React.Component<OwnPropsType>  {
         return (
             <div className="todoList-footer">
                 {!this.state.isHidden && <>
-                    <Button title={'All'}
-                            btnClass={classForAll}
-                            onClickFn={this.onAllFilterClick}
-                    />
-                    <Button title={'Completed'}
-                            btnClass={classForCompleted}
-                            onClickFn={ this.onCompletedFilterClick}
-                    />
-                    <Button title={'Active'}
-                            btnClass={classForActive}
-                            onClickFn={this.onActiveFilterClick}
-                    />
+                    <Button variant={this.props.filterValue === "All" ? "outlined" : "text"}
+                            color='default'
+                            onClick={this.onAllFilterClick}>All</Button>
+                    <Button variant={this.props.filterValue === "Completed" ? "outlined" : "text"}
+                            color='default'
+                            onClick={this.onCompletedFilterClick}>Completed</Button>
+                    <Button variant={this.props.filterValue === "Active" ? "outlined" : "text"}
+                            color='default'
+                            onClick={this.onActiveFilterClick}>Active</Button>
                 </>}
 
 

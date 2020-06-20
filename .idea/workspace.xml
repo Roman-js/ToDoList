@@ -2,12 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68d37df7-1cb3-460c-a936-7ef75c3ff8f5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/TodoList.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddNewItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddNewItemForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Button1.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoListFooter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListFooter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoListTask.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListTask.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoListTasks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListTasks.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoListTitle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListTitle.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/entities.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/entities.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +34,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/Roman-js/ToDoList.git" />
+      </set>
+    </option>
   </component>
   <component name="ProjectId" id="1WDCNfoDWW4WmToWVe4QJA93mCI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -134,6 +151,16 @@
       <workItem from="1587014779410" duration="37000" />
       <workItem from="1587049248695" duration="658000" />
       <workItem from="1587637579620" duration="1572000" />
+      <workItem from="1587639922007" duration="6353000" />
+      <workItem from="1587994532518" duration="41000" />
+      <workItem from="1588360876560" duration="4113000" />
+      <workItem from="1588585228894" duration="10000" />
+      <workItem from="1589118614131" duration="615000" />
+      <workItem from="1591417770130" duration="1224000" />
+      <workItem from="1591773835613" duration="680000" />
+      <workItem from="1592581127738" duration="9766000" />
+      <workItem from="1592593508884" duration="9263000" />
+      <workItem from="1592642609647" duration="2368000" />
     </task>
     <task id="LOCAL-00001" summary="Connect to server and update data through server">
       <created>1584640665766</created>
@@ -156,34 +183,55 @@
       <option name="project" value="LOCAL" />
       <updated>1586941478165</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Rewrite the project in TypeScript 2.0">
+      <created>1587640020685</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1587640020685</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Connect to server and update data through server" />
     <MESSAGE value="Using DAL through api" />
     <MESSAGE value="Rewrite the project in TypeScript" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rewrite the project in TypeScript" />
+    <MESSAGE value="Rewrite the project in TypeScript 2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rewrite the project in TypeScript 2.0" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="585" y="115" key="CommitChangelistDialog2" timestamp="1587639983962">
+    <state x="585" y="115" key="CommitChangelistDialog2" timestamp="1587640019217">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1587639983962" />
-    <state x="260" y="282" key="FileChooserDialogImpl" timestamp="1587049905393">
+    <state x="585" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1587640019217" />
+    <state x="260" y="282" key="FileChooserDialogImpl" timestamp="1588585237804">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="260" y="282" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587049905393" />
+    <state x="260" y="282" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1588585237804" />
     <state x="221" y="155" key="refactoring.ChangeSignatureDialog" timestamp="1586667578586">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="221" y="155" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586667578586" />
-    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1586689290147">
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1592641999042">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1586689290147" />
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1592641999042" />
   </component>
 </project>

@@ -3,6 +3,8 @@ import {connect} from "react-redux";
 import {DELETE_TASK, deleteTask, deleteTaskTC} from "./reducer";
 import {TaskType, TodoListType} from "./types/entities";
 import {AppStateType} from "./store";
+import {Checkbox, IconButton, TextField} from "@material-ui/core";
+import {Delete} from "@material-ui/icons";
 
 type StateType = {
     editMode: boolean
@@ -13,7 +15,7 @@ type OwnPropsType = {
     title: string
     isDone: number //string
     priority: string
-    changeStatus:(task: string, status: number)=>void
+    changeStatus: (task: string, status: number) => void
     changeTitle: (taskId: string, checked: string) => void
     todoListId: string
 }
@@ -34,25 +36,15 @@ class TodoListTask extends React.Component <PropsType, StateType> {
     }
 
     onIsDoneChanged = (e: React.FormEvent<HTMLInputElement>) => {
-        debugger
         let status = e.currentTarget.checked ? 2 : 0;
         this.props.changeStatus(this.props.task.id, status)
-        // alert(e.currentTarget.checked);
+
     };
-    onTitleChanged = (e: React.FormEvent<HTMLInputElement>) => {
+    onTitleChanged = (e: any) => {
         this.setState({title: e.currentTarget.value})
-        //  this.props.changeTitle(this.props.task.id, e.currentTarget.value)
     };
     deleteTask = () => {
         this.props.deleteTaskTC(this.props.todoListId, this.props.task.id)
-        // axios.delete(`https://social-network.samuraijs.com/api/1.1/todo-lists/${this.props.todoListId}/tasks/${this.props.task.id}`,
-        //     {withCredentials: true, headers: {'API-KEY': '0c05e3f5-1bb0-4c63-a612-ce4b6957f3bd'}})
-
-
-        //     api.deleteTask(this.props.todoListId, this.props.task.id)
-        //     .then(res=>{
-        //         if(res.data.resultCode === 0) this.props.deleteTask(this.props.task.id, this.props.todoListId)})
-
     }
     render = () => {
         let classForTask = (this.props.task.status === 2)
@@ -61,19 +53,23 @@ class TodoListTask extends React.Component <PropsType, StateType> {
         return (
             <div className="todoList-tasks">
                 <div className={classForTask}>
-                    <input type="checkbox"
+                    <Checkbox color='primary'
                            checked={this.props.task.status === 2 ? true : false}
                            onChange={this.onIsDoneChanged}
                     />
-                    {this.state.editMode ? <input value={this.state.title}
-                                                  autoFocus={true}
-                                                  onChange={this.onTitleChanged}
-                                                  onBlur={this.deactivateEditMode}/> :
+                    {this.state.editMode ? <TextField
+                            variant='outlined'
+                            value={this.state.title}
+                            autoFocus={true}
+                            onChange={this.onTitleChanged}
+                            onBlur={this.deactivateEditMode}/> :
                         <span onClick={this.activateEditMode}>
-                          {this.props.task.title} {this.props.priority}
+                          {this.props.task.title} {/*{this.props.priority}*/}
                     </span>
                     }
-                    <button onClick={this.deleteTask}>X</button>
+                    <IconButton onClick={this.deleteTask}>
+                        <Delete/>
+                    </IconButton>
                 </div>
             </div>
         );
@@ -85,7 +81,7 @@ type MapStateToPropsType = {
 
 }
 type MapDispatchPropsType = {
-    deleteTaskTC: (todolistId: string, taskId: string)=>void
+    deleteTaskTC: (todolistId: string, taskId: string) => void
 }
 const mapStateToProps = (state: AppStateType): MapStateToPropsType => {
 

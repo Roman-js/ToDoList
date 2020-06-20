@@ -13,17 +13,10 @@ export type TodoListType = {
 
 export type TaskType = {
 
-    // title: string
-    // description: string
-    // completed: boolean
-    // status: number
-    // priority: string
-    // startDate: string
-    // deadline: string
 
     description: string
     title: string
-    completed: boolean
+    //completed: boolean
     status: number
     priority: string //number
     startDate: string

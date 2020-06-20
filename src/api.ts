@@ -33,7 +33,6 @@ export const api = {
  },
 
     putTask(todoListId: string, taskId: string, task: object){
-debugger
      return  instance.put(`${todoListId}/tasks/${taskId}`, task)
  },
 

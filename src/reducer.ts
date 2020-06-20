@@ -46,20 +46,17 @@ const reducer = (state = initialState, action: TodoActionType): InitialStateType
             }
 
         case CHANGE_TASK:
-            debugger
             return {
                 ...state,
                 todolists:
                     state.todolists.map(tl => {
-                        if (tl.id === action.todoListId) {
+                        if (tl.id === action.task.todoListId) {
                             return {
                                 ...tl, tasks: tl.tasks.map(t => {
-                                    if (t.id !== action.taskId) {
-                                        debugger
+                                    if (t.id !== action.task.id) {
                                         return t
                                     } else {
-                                        debugger
-                                        return {...t, ...action.obj}
+                                        return {...t, ...action.task}
                                     }
                                 })
                             }
@@ -134,7 +131,7 @@ const reducer = (state = initialState, action: TodoActionType): InitialStateType
 
 export const addTodolist = (newTodolist: TodoListType): AddTodolistActionType => ({type: ADD_TODOLIST, newTodolist})
 export const addTask = (newTask: TaskType, todoListId: string): AddTaskActionType => ({type: ADD_TASK, newTask, todoListId})
-export const changeTask = (obj: any, taskId: string, todoListId: string): ChangeTaskActionType => ({type: CHANGE_TASK, obj, taskId,  todoListId})
+export const changeTask = (task: TaskType, taskId: string, todoListId: string): ChangeTaskActionType => ({type: CHANGE_TASK,task, taskId,  todoListId})
 export const deleteTodolist = (todoListId: string): DeleteTodoListActionType => ({type: DELETE_TODOLIST, todoListId})
 export const deleteTask = (taskId: string, todoListId: string): DeleteTaskActionType => ({type: DELETE_TASK, taskId, todoListId})
 export const getTodoList = (todolists: Array<TodoListType>): SetTodoListActionType => ({type: SET_TODOLIST, todolists})
@@ -154,7 +151,7 @@ type AddTaskActionType = {
 }
 type ChangeTaskActionType = {
     type: typeof CHANGE_TASK
-    obj: any
+    task: TaskType
     taskId: string
     todoListId: string
 }
@@ -196,7 +193,7 @@ type ThunkType = ThunkAction<void, InitialStateType, unknown, TodoActionType >
 //Thunk
 
 export const loadTasksThunk = (todolistId: string): ThunkAction<void, InitialStateType, unknown, TodoActionType>=>{
-    return (dispatch: any)=> (
+    return (dispatch)=> (
         api.getTasks(todolistId)
             .then(res => {
                 let allTasks = res.data.items
@@ -225,26 +222,21 @@ export const restoreTodolistTC = (): ThunkAction<void, InitialStateType, unknown
     return(dispatch: any)=>{
         api.getTodolists()
             .then(res => {
-
                 dispatch(getTodoList(res.data))
             });
     }
 }
-                                                               // task string
-export const changeTaskTC = (todoListId: string, taskId: string, task: object, obj: any): ThunkAction<void, InitialStateType, unknown, TodoActionType> =>{
-   debugger
+                                                               // task TaskType
+export const changeTaskTC = (todoListId: string, taskId: string, task: TaskType, obj: any): ThunkAction<void, InitialStateType, unknown, TodoActionType> =>{
     return(dispatch)=>{
         api.putTask(todoListId, taskId, task)
             .then(res=>{
-debugger
                 if(res.data.resultCode === 0) {
-                    let task = res.data.data.item;
+                    let task: TaskType = res.data.data.item;
                     dispatch(changeTask(task ,todoListId, taskId ));
-
                 };
             })
             .catch( (err)=> {
-                debugger
             } )
     }
 }

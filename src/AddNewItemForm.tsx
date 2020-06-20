@@ -1,5 +1,9 @@
 import React from 'react';
 import TodoListTitle from "./TodoListTitle";
+import {Button, IconButton, TextField} from "@material-ui/core";
+import {AddBox} from "@material-ui/icons";
+
+
 
 
 
@@ -26,7 +30,7 @@ class AddNewItemForm extends React.Component<OwnPropsType, StateType> {
 
 
     };
-    onTitleChanged = (e: React.FormEvent<HTMLInputElement>) =>{
+    onTitleChanged = (e: any) =>{
         let newTitle = e.currentTarget.value;
         this.setState({
             error: false,
@@ -38,20 +42,22 @@ class AddNewItemForm extends React.Component<OwnPropsType, StateType> {
         }
     }
     render() {
-    let classForInput = (this.state.error)? 'error' : '';
+    let error = this.state.error? 'This is required' : '';
 
         return (
 
 
                 <div className="NewItemForm">
-                    <input
+                    <TextField
+                        variant='outlined'
                         value={this.state.title}
                         onChange={this.onTitleChanged}
-                        className={classForInput}
-                        type="text"
                         placeholder="New Item name"
+                        error={this.state.error}
+                        helperText={error}
                         onKeyPress={this.onAddItemEnterPress}/>
-                    <button onClick={this.onAddItemClick}>Add</button>
+                    {/*<Button variant='contained' color='primary' onClick={this.onAddItemClick}>Add</Button>*/}
+                    <IconButton color='primary' onClick={this.onAddItemClick}><AddBox /></IconButton>
                 </div>
 
 

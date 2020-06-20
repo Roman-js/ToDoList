@@ -1,4 +1,8 @@
 import React from 'react'
+import style from './TodoList.module.css'
+import {IconButton, TextField} from "@material-ui/core";
+import {Delete} from "@material-ui/icons";
+import {InputProps as StandardInputProps} from "@material-ui/core/Input/Input";
 
 type OwnPropsType = {
     title: string
@@ -28,26 +32,22 @@ class TodoListTitle extends React.Component <OwnPropsType>{
         this.setState({editMode:false})
         this.props.changeTitleTC(this.props.todoListId, this.state.currentTitle)
 
-        // api.changeTodolistTitle(this.props.todoListId, this.state.currentTitle)
-        //     .then(res=>{
-        //         debugger
-        //         if(res.data.resultCode===0){
-        //             this.props.changeTitleTodolist(this.props.todoListId, this.state.currentTitle) //     let task = res.data.data.item; //this.state.currentTitle
-        //         }
-        //     })
-
-
     }
-    titleChanged = (e: React.FormEvent<HTMLInputElement>) =>{
+    titleChanged = (e: any) =>{
         this.setState({currentTitle: e.currentTarget.value})
     }
     render() {
         return (
             <>
                { !this.state.editMode?
-            <h3 onClick={this.activeMode} className="todoList-header__title">{this.props.title}
-            <button onClick={this.props.deleteTodolist}>X</button></h3>:
-            <input
+                   <span className={style.title}>
+            <h3 onClick={this.activeMode} className="todoList-header__title">{this.props.title}</h3>
+                       <IconButton onClick={this.props.deleteTodolist}>
+                           <Delete />
+                       </IconButton>
+                   </span>:
+            <TextField
+                variant='outlined'
                 onBlur={this.deactivateEditMode}
                 autoFocus={true}
                 value={this.state.currentTitle}

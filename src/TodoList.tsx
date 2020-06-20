@@ -10,6 +10,7 @@ import {
 } from "./reducer";
 
 import { TaskType} from "./types/entities";
+import {Grid, Paper} from "@material-ui/core";
 
 
 class TodoList extends React.Component<PropsType, StateType> {
@@ -77,20 +78,18 @@ class TodoList extends React.Component<PropsType, StateType> {
 
             return task.id === taskId
         });
-        let task = {...changedTask, ...obj};
-
+        let task = {...changedTask, ...obj} as TaskType;
         this.props.changeTaskTC(this.props.id, taskId, task, obj);
-
-    }
-
-
-    changeStatus = (task: string, status: number) => {
-        this.changeTask(task, {status}) //{status: status}
     };
 
-    changeTitle = (task: string, newTitle: string) => {
 
-        this.changeTask(task, {title:newTitle})
+    changeStatus = (taskId: string, status: number) => {
+        this.changeTask(taskId, {status}) //{status: status}
+    };
+
+    changeTitle = (taskId: string, newTitle: string) => {
+
+        this.changeTask(taskId, {title:newTitle})
 
     };
 
@@ -108,7 +107,9 @@ class TodoList extends React.Component<PropsType, StateType> {
         return (
             <div className="App">
                 <div className="todoList">
-                    <div>
+
+                        <Grid item>
+                            <Paper style={{margin: '10px', padding: '10px'}}>
                     <TodoListHeader addItem={this.addTask}
                                     title={this.props.title}
                                     deleteTodolist={this.deleteTodolist}
@@ -116,7 +117,7 @@ class TodoList extends React.Component<PropsType, StateType> {
                                     changeTitleTC={this.props.changeTitleTC}
                                     //changeTitleTodolist={this.props.changeTitleTodolist}
                         />
-                    </div>
+
                     <TodoListTasks
                         changeTitle={this.changeTitle}
                         changeStatus={this.changeStatus}
@@ -132,41 +133,20 @@ class TodoList extends React.Component<PropsType, StateType> {
                             }
                         })}
                         todoListId={this.props.id}/>
+
                     <TodoListFooter
                         filterValue={this.state.filterValue}
                         changeFilter={this.changeFilter}
                     />
+                            </Paper>
+                        </Grid>
                 </div>
             </div>
 
         );
     }
 }
-// const mapDispatchToProps = (dispatch)=> {
-//     return {
-//         addTask: (newTask, todoListId) => {
-//
-//             dispatch(addTaskAC(newTask, todoListId))
-//         },
-//
-//         changeTask: (task)=>{
-//
-//             dispatch(changeTask(task))
-//         },
-//
-//         deleteTodoList: (todoListId)=>{
-//
-//             dispatch(deleteTodolist(todoListId))
-//         },
-//         getTasks: ( tasks, todolistId)=>{
-//             dispatch(getTasks(tasks, todolistId))
-//         },
-//        changeTitleTodolist: (todolistId, newTitle)=>{
-//             debugger
-//             dispatch(changeTitleTodolistAC(todolistId, newTitle))
-//        }
-//     }
-// }
+
 type StateType = {
     tasks: TaskType[]
     filterValue: string
@@ -178,7 +158,7 @@ type MapDispatchToPropsType = {
     addTaskTC: (newTitle: string, todolistId: string)=>void
     changeTitleTodolist: (todoListId: string, newTitle: string)=>void // delete
     changeTitleTC: (todoListId: string, newTitle: string)=>void
-    changeTaskTC: (todoListId: string, taskId: string, task: object, obj: object)=>void
+    changeTaskTC: (todoListId: string, taskId: string, task: TaskType, obj: object)=>void
 }
 
 

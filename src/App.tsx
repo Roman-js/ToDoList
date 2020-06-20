@@ -6,6 +6,9 @@ import {connect} from "react-redux";
 import {addTodolistTC, restoreTodolistTC} from "./reducer";
 import { TodoListType} from "./types/entities";
 import {AppStateType} from "./store";
+import {AppBar, Button, Container, Grid, IconButton, Paper, Toolbar, Typography} from "@material-ui/core";
+import {Menu} from "@material-ui/icons";
+
 
 
 class App extends React.Component<PropsType & StateType> {
@@ -34,14 +37,29 @@ class App extends React.Component<PropsType & StateType> {
         let todolist = this.props.todolists.map(tl =><TodoList id={tl.id} title={tl.title} tasks={tl.tasks}/>);
 
         return (
-            <>
-                <div>
-                    <AddNewItemForm addItem={this.addTodolist}/>
+                <div className='App'>
+                    <AppBar position='static'>
+                    <Toolbar>
+                        <IconButton edge='start' color='inherit' aria-label='menu'>
+                            <Menu />
+                        </IconButton>
+                        <Typography variant='h6'>
+                            News
+                        </Typography>
+                        <Button color='inherit'>Login</Button>
+                    </Toolbar>
+                    </AppBar>
+                    <Container fixed>
+                        <Grid container style={{padding: '20px 10px'}}>
+                            <AddNewItemForm addItem={this.addTodolist}/>
+                        </Grid>
+                        <Grid container spacing={2}>
+
+                            {todolist}
+
+                        </Grid>
+                    </Container>
                 </div>
-                <div className="App">
-                    {todolist}
-                </div>
-            </>
         );
     }
 }
