@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68d37df7-1cb3-460c-a936-7ef75c3ff8f5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/TodoList.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AddNewItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddNewItemForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Button1.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TodoListFooter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListFooter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoListTask.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListTask.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoListTasks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListTasks.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoListTitle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListTitle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/entities.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/entities.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +42,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cards" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="E:\FrontDevelop\project01\node_modules\typescript\lib" />
@@ -160,7 +149,7 @@
       <workItem from="1591773835613" duration="680000" />
       <workItem from="1592581127738" duration="9766000" />
       <workItem from="1592593508884" duration="9263000" />
-      <workItem from="1592642609647" duration="2368000" />
+      <workItem from="1592642609647" duration="14667000" />
     </task>
     <task id="LOCAL-00001" summary="Connect to server and update data through server">
       <created>1584640665766</created>
@@ -190,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587640020685</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Repair couple mistakes&#10;Set Material UI and rewrite styles">
+      <created>1592645102813</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1592645102813</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,17 +210,22 @@
     <MESSAGE value="Using DAL through api" />
     <MESSAGE value="Rewrite the project in TypeScript" />
     <MESSAGE value="Rewrite the project in TypeScript 2.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rewrite the project in TypeScript 2.0" />
+    <MESSAGE value="Repair couple mistakes&#10;Set Material UI and rewrite styles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Repair couple mistakes&#10;Set Material UI and rewrite styles" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="585" y="115" key="CommitChangelistDialog2" timestamp="1587640019217">
+    <state x="585" y="115" key="CommitChangelistDialog2" timestamp="1592645100668">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1587640019217" />
-    <state x="260" y="282" key="FileChooserDialogImpl" timestamp="1588585237804">
+    <state x="585" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1592645100668" />
+    <state x="260" y="282" key="FileChooserDialogImpl" timestamp="1592911745526">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="260" y="282" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1588585237804" />
+    <state x="260" y="282" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1592911745526" />
+    <state x="552" y="254" key="Vcs.Push.Dialog.v2" timestamp="1592645106036">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1592645106036" />
     <state x="221" y="155" key="refactoring.ChangeSignatureDialog" timestamp="1586667578586">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

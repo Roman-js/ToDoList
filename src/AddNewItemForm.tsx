@@ -57,7 +57,9 @@ class AddNewItemForm extends React.Component<OwnPropsType, StateType> {
                         helperText={error}
                         onKeyPress={this.onAddItemEnterPress}/>
                     {/*<Button variant='contained' color='primary' onClick={this.onAddItemClick}>Add</Button>*/}
-                    <IconButton color='primary' onClick={this.onAddItemClick}><AddBox /></IconButton>
+                    <IconButton color='primary' onClick={this.onAddItemClick}>
+                        <AddBox />
+                    </IconButton>
                 </div>
 
 

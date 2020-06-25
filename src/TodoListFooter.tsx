@@ -26,22 +26,18 @@ class TodoListFooter extends React.Component<OwnPropsType>  {
 
 
     render = () => {
-    let classForAll = this.props.filterValue === "All" ? "filter-active" : "";
-    let classForCompleted = this.props.filterValue === "Completed" ? "filter-active" : "";
-    let classForActive = this.props.filterValue === "Active" ? "filter-active" : "";
-
-
+        
         return (
             <div className="todoList-footer">
                 {!this.state.isHidden && <>
-                    <Button variant={this.props.filterValue === "All" ? "outlined" : "text"}
-                            color='default'
+                    <Button variant={this.props.filterValue === "All" ? "contained" : "text"}
+                            color={this.props.filterValue === 'All' ? 'primary' : "default"}
                             onClick={this.onAllFilterClick}>All</Button>
-                    <Button variant={this.props.filterValue === "Completed" ? "outlined" : "text"}
-                            color='default'
+                    <Button variant={this.props.filterValue === "Completed" ? "contained" : "text"}
+                            color={this.props.filterValue === 'Completed' ? 'primary' : "default"}
                             onClick={this.onCompletedFilterClick}>Completed</Button>
-                    <Button variant={this.props.filterValue === "Active" ? "outlined" : "text"}
-                            color='default'
+                    <Button variant={this.props.filterValue === "Active" ? "contained" : "text"}
+                            color={this.props.filterValue === 'Active' ? 'primary' : "default"}
                             onClick={this.onActiveFilterClick}>Active</Button>
                 </>}
 

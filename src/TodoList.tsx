@@ -108,7 +108,7 @@ class TodoList extends React.Component<PropsType, StateType> {
             <div className="App">
                 <div className="todoList">
 
-                        <Grid item>
+                        <Grid item >
                             <Paper style={{margin: '10px', padding: '10px'}}>
                     <TodoListHeader addItem={this.addTask}
                                     title={this.props.title}

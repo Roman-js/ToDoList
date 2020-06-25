@@ -4,11 +4,10 @@ import TodoList from "./TodoList";
 import AddNewItemForm from "./AddNewItemForm";
 import {connect} from "react-redux";
 import {addTodolistTC, restoreTodolistTC} from "./reducer";
-import { TodoListType} from "./types/entities";
+import {TodoListType} from "./types/entities";
 import {AppStateType} from "./store";
-import {AppBar, Button, Container, Grid, IconButton, Paper, Toolbar, Typography} from "@material-ui/core";
+import {AppBar, Button, Container, Grid, IconButton, MenuItem, Paper, Toolbar, Typography} from "@material-ui/core";
 import {Menu} from "@material-ui/icons";
-
 
 
 class App extends React.Component<PropsType & StateType> {
@@ -27,20 +26,21 @@ class App extends React.Component<PropsType & StateType> {
     }
 
 
-    addTodolist = (title: string) =>{
+    addTodolist = (title: string) => {
         this.props.addTodolistTC(title)
     }
 
 
+
     render = () => {
 
-        let todolist = this.props.todolists.map(tl =><TodoList id={tl.id} title={tl.title} tasks={tl.tasks}/>);
+        let todolist = this.props.todolists.map(tl => <TodoList id={tl.id} title={tl.title} tasks={tl.tasks}/>);
 
         return (
-                <div className='App'>
-                    <AppBar position='static'>
+            <div className='App'>
+                <AppBar position='static'>
                     <Toolbar>
-                        <IconButton edge='start' color='inherit' aria-label='menu'>
+                        <IconButton edge='start' color='inherit'>
                             <Menu />
                         </IconButton>
                         <Typography variant='h6'>
@@ -48,23 +48,23 @@ class App extends React.Component<PropsType & StateType> {
                         </Typography>
                         <Button color='inherit'>Login</Button>
                     </Toolbar>
-                    </AppBar>
-                    <Container fixed>
-                        <Grid container style={{padding: '20px 10px'}}>
-                            <AddNewItemForm addItem={this.addTodolist}/>
-                        </Grid>
-                        <Grid container spacing={2}>
+                </AppBar>
+                <Container fixed>
+                    <Grid container style={{padding: '20px 10px'}}>
+                        <AddNewItemForm addItem={this.addTodolist}/>
+                    </Grid>
+                    <Grid container spacing={2}>
 
-                            {todolist}
+                        {todolist}
 
-                        </Grid>
-                    </Container>
-                </div>
+                    </Grid>
+                </Container>
+            </div>
         );
     }
 }
 
-const mapStateToProps = (state: AppStateType): MapStateToPropsType =>{
+const mapStateToProps = (state: AppStateType): MapStateToPropsType => {
 
     return {
         todolists: state.todolist.todolists
@@ -73,7 +73,8 @@ const mapStateToProps = (state: AppStateType): MapStateToPropsType =>{
 
 const ConnectedApp = connect<MapStateToPropsType, MapDispatchToPropsType, OwnPropsType, AppStateType>(mapStateToProps,
     {
-    addTodolistTC, restoreTodolistTC})(App);
+        addTodolistTC, restoreTodolistTC
+    })(App);
 
 export default ConnectedApp;
 
