@@ -4,46 +4,52 @@ import {ChangeTaskType, TaskType, TodoListType} from "./types/entities";
 
 
 const instance = axios.create({
-    baseURL: "https://social-network.samuraijs.com/api/1.1/todo-lists/",
+    baseURL: "https://social-network.samuraijs.com/api/1.1/",
     withCredentials: true,
-    headers: {'API-KEY': '0c05e3f5-1bb0-4c63-a612-ce4b6957f3bd'}
+    headers: {'API-KEY': 'e203b3f5-d0bb-401b-85c2-cf8ebe7c290c'}
 });
 
 
 export const api = {
+    login(email: string, password: string){
+        return instance.post(`auth/login`, {email, password})
+            .then(response=> {
+                console.log(response.data)
+                    return response.data})
+    },
     createTask(newTitle: string, todolistId: string){
-     return instance.post(`${todolistId}/tasks`, {title:newTitle})
- },
+     return instance.post(`todo-lists/${todolistId}/tasks`, {title:newTitle})
+    },
 
     createTodolist(title: string){
-        return instance.post('', {title: title})
+        return instance.post('todo-lists/', {title: title})
     },
 
     getTodolists(){
 
-        return instance.get<TodoListType[]>('')
+        return instance.get<TodoListType[]>('todo-lists/')
     },
 
     getTasks(taskId: string){
-    return instance.get<GetTasksResponseType>(`${taskId}/tasks`)
+    return instance.get<GetTasksResponseType>(`todo-lists/${taskId}/tasks`)
     },
 
     deleteTodolist(todolistId: string){
-     return instance.delete(`${todolistId}`)
- },
+     return instance.delete(`todo-lists/${todolistId}`)
+    },
 
     putTask(todoListId: string, taskId: string, task: object){
-     return  instance.put(`${todoListId}/tasks/${taskId}`, task)
- },
+     return  instance.put(`todo-lists/${todoListId}/tasks/${taskId}`, task)
+    },
 
     deleteTask(todolistId: string, taskId: string){
-     return  instance.delete(`${todolistId}/tasks/${taskId}`)
- },
+     return  instance.delete(`todo-lists/${todolistId}/tasks/${taskId}`)
+    },
 
  changeTodolistTitle (todoListId: string, updateTitle: string){
 
-        return instance.put(`${todoListId}`, {title: updateTitle})
- }
+        return instance.put(`todo-lists/${todoListId}`, {title: updateTitle})
+   }
 
 }
 
