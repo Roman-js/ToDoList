@@ -24,16 +24,13 @@ class TodoListTasks extends React.Component<OwnPropsType> {
                                  changeStatus={this.props.changeStatus}
                                  changeTitle={this.props.changeTitle}
                                  todoListId={this.props.todoListId}
-
+                                 key={t.id}
                     />
         });
 
-
         return (
             <div className="todoList-tasks">
-
                 {tasksEls}
-
             </div>
         );
     }

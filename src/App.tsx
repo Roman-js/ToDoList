@@ -7,12 +7,13 @@ import {AppStateType} from "./store";
 import Login from "./Login";
 import ConnectedRoot from "./Root";
 
+type StateType = {
+    todolists: TodoListType[]
+}
 
 const App = (props: StateType) => {
 
     const auth = useSelector((state:AppStateType) => state.todolist.auth);
-
-
 
         return (
 
@@ -21,20 +22,17 @@ const App = (props: StateType) => {
                 <Route path={'/login'} component={Login}/>
                 <Route path={'/todo'} component={ConnectedRoot}/>
 
-                {/*<ConnectedRoot todolists={props.todolists}/>*/}
                 {!auth? <Redirect to='/login' /> : <Redirect to='/todo'/>}
 
             </div>
         );
-    }
+    };
 
 
 
 
 export default App;
 
-type StateType = {
-    todolists: TodoListType[]
-}
+
 
 

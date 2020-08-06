@@ -1,7 +1,6 @@
 import {api} from "./api";
-import {ChangeTaskType, TaskType, TodoListType} from "./types/entities";
-import {Dispatch} from "redux";
-import {ThunkAction, ThunkDispatch} from "redux-thunk";
+import {TaskType, TodoListType} from "./types/entities";
+import {ThunkAction} from "redux-thunk";
 
 export const ADD_TODOLIST = 'TodoList/Reducer/ADD-TODOLIST';
 export const ADD_TASK = "TodoList/Reducer/ADD-TASK";
@@ -252,7 +251,6 @@ export const restoreTodolistTC = (): ThunkAction<void, InitialStateType, unknown
             })
             .catch(error => {
                 console.log(error)
-                debugger
             });
     }
 }
@@ -304,7 +302,6 @@ export const authorizeTC = (email: string, password: string): ThunkAction<void, 
     return (dispatch: any) => {
         api.login(email, password)
             .then(res => {
-                console.log(res.data)
                if(res.resultCode === 0) {
                    dispatch(approveAuth(true))
                }

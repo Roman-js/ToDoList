@@ -1,6 +1,10 @@
 import React from 'react';
 
-
+type OwnPropsType = {
+    onClickFn: ()=>void
+    btnClass: string
+    title: string
+}
 
 class Button1 extends React.Component <OwnPropsType> {
 
@@ -11,16 +15,10 @@ class Button1 extends React.Component <OwnPropsType> {
                         className={this.props.btnClass}>
                     {this.props.title}
                 </button>
-
-
         );
     }
 }
 
 
 export default Button1;
-type OwnPropsType={
-    onClickFn: ()=>void
-    btnClass: string
-    title: string
-}
+

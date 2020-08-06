@@ -6,12 +6,8 @@ import {connect} from "react-redux";
 import {addTodolistTC, restoreTodolistTC} from "./reducer";
 import {TodoListType} from "./types/entities";
 import {AppStateType} from "./store";
-import {AppBar, Button, Container, Grid, IconButton, MenuItem, Paper, Toolbar, Typography} from "@material-ui/core";
+import {AppBar, Button, Container, Grid, IconButton, Toolbar, Typography} from "@material-ui/core";
 import {Menu} from "@material-ui/icons";
-import Login from "./Login";
-import {Redirect, Route} from "react-router";
-
-
 
 
 class App extends React.Component<PropsType & StateType> {
@@ -19,38 +15,31 @@ class App extends React.Component<PropsType & StateType> {
     state = {
         todolists: [],
         login: false
-    }
+    };
 
     componentDidMount() {
-        debugger
         this.restoreState()
     }
 
-
     restoreState = () => {
         this.props.restoreTodolistTC()
-    }
+    };
 
 
     addTodolist = (title: string) => {
         this.props.addTodolistTC(title)
-    }
+    };
 
 
 
     render = () => {
 
-        let todolist = this.props.todolists.map(tl => <TodoList id={tl.id} title={tl.title} tasks={tl.tasks}/>);
+        let todolist = this.props.todolists.map(tl => <TodoList id={tl.id} title={tl.title} tasks={tl.tasks} key={tl.id}/>);
 
         return (
 
             <div className='App'>
 
-
-
-
-               {/* <Route path={'/login'} component={Login}/>
-                {!this.props.auth ? <Redirect to={'/login'}/> :*/}
                     <div>
                         <AppBar position='static'>
                             <Toolbar>
@@ -74,7 +63,6 @@ class App extends React.Component<PropsType & StateType> {
                             </Grid>
                         </Container>
                     </div>
-               {/* }*/}
             </div>
         );
     }
@@ -86,7 +74,7 @@ const mapStateToProps = (state: AppStateType): MapStateToPropsType => {
         todolists: state.todolist.todolists,
         auth: state.todolist.auth
     }
-}
+};
 
 const ConnectedRoot = connect<MapStateToPropsType, MapDispatchToPropsType, OwnPropsType, AppStateType>(mapStateToProps,
     {

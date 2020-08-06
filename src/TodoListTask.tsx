@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from "react-redux";
-import {DELETE_TASK, deleteTask, deleteTaskTC} from "./reducer";
+import {deleteTaskTC} from "./reducer";
 import {TaskType, TodoListType} from "./types/entities";
 import {AppStateType} from "./store";
 import {Checkbox, IconButton, TextField} from "@material-ui/core";
@@ -25,27 +25,27 @@ class TodoListTask extends React.Component <PropsType, StateType> {
     state: StateType = {
         editMode: false,
         title: this.props.task.title
-    }
+    };
 
     activateEditMode = () => {
         this.setState({editMode: true})
-    }
+    };
     deactivateEditMode = () => {
-        this.setState({editMode: false})
+        this.setState({editMode: false});
         this.props.changeTitle(this.props.task.id, this.state.title)
-    }
+    };
 
     onIsDoneChanged = (e: React.FormEvent<HTMLInputElement>) => {
         let status = e.currentTarget.checked ? 2 : 0;
         this.props.changeStatus(this.props.task.id, status)
 
     };
-    onTitleChanged = (e: any) => {
+    onTitleChanged = (e: React.ChangeEvent<HTMLInputElement>) => {
         this.setState({title: e.currentTarget.value})
     };
     deleteTask = () => {
         this.props.deleteTaskTC(this.props.todoListId, this.props.task.id)
-    }
+    };
     render = () => {
         let classForTask = (this.props.task.status === 2)
             ? "todoList-task done"
@@ -64,7 +64,7 @@ class TodoListTask extends React.Component <PropsType, StateType> {
                             onChange={this.onTitleChanged}
                             onBlur={this.deactivateEditMode}/> :
                         <span onClick={this.activateEditMode}>
-                          {this.props.task.title} {/*{this.props.priority}*/}
+                          {this.props.task.title}
                     </span>
                     }
                     <IconButton onClick={this.deleteTask}>

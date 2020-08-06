@@ -1,6 +1,5 @@
-import  axios from "axios";
-import {ChangeTaskType, TaskType, TodoListType} from "./types/entities";
-
+import axios from "axios";
+import {TaskType, TodoListType} from "./types/entities";
 
 
 const instance = axios.create({
@@ -14,7 +13,6 @@ export const api = {
     login(email: string, password: string){
         return instance.post(`auth/login`, {email, password})
             .then(response=> {
-                console.log(response.data)
                     return response.data})
     },
     createTask(newTitle: string, todolistId: string){
@@ -46,7 +44,7 @@ export const api = {
      return  instance.delete(`todo-lists/${todolistId}/tasks/${taskId}`)
     },
 
- changeTodolistTitle (todoListId: string, updateTitle: string){
+    changeTodolistTitle (todoListId: string, updateTitle: string){
 
         return instance.put(`todo-lists/${todoListId}`, {title: updateTitle})
    }

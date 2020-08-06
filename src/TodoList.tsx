@@ -9,67 +9,27 @@ import {
     changeTitleTodolist, deleteTodolistTC, loadTasksThunk,
 } from "./reducer";
 
-import { TaskType} from "./types/entities";
+import {TaskType} from "./types/entities";
 import {Grid, Paper} from "@material-ui/core";
-
 
 class TodoList extends React.Component<PropsType, StateType> {
     componentDidMount() {
         this.restoreState()
     }
 
-    state = {
-        tasks: [
-            // {id: 0, title: 'CSS', isDone: true, priority: 'high'},
-            // {id: 1,title: 'JS', isDone: true, priority: 'low'},
-            // {id: 2,title: 'HTML', isDone: false, priority: 'high'},
-            // {id: 3,title: 'React', isDone: false, priority: 'low'},
-            // {id: 4,title: 'Angular', isDone: true, priority: 'high'},
-        ],
+    state: StateType = {
+        tasks: [],
         filterValue: 'All'
     };
 
-    // saveState = () => {
-    //     let stateAsString = JSON.stringify(this.state)
-    //     localStorage.setItem(`our-state - ${this.props.id}`, stateAsString)
-    // }
 
-    // _restoreState = () => {
-    //     let state = this.state
-    //     let stateAsString = localStorage.getItem(`our-state - ${this.props.id}`);
-    //     if (stateAsString) {
-    //         state = JSON.parse(stateAsString)
-    //     }
-    //     // callback add correct id
-    //     //setState ассинхронный
-    //     this.setState(state, () => {
-    //         this.state.tasks.forEach(t => {
-    //             if (t.id > this.nextTaskId) {
-    //                 this.nextTaskId = t.id + 1;
-    //             }
-    //         })
-    //     })
-    // }
     restoreState=()=> {
-
         this.props.loadTasksThunk(this.props.id)
-        // api.getTasks(this.props.id)
-        //     .then(res => {
-        //         let allTasks = res.data.items;
-        //         this.props.getTasks(allTasks, this.props.id)
-        //     })
-    }
+    };
 
     deleteTodolist = ()=>{
         this.props.deleteTodolistTC(this.props.id)
-        // api.deleteTodolist(this.props.id)
-        //     .then(res=>{
-        //
-        //         if(res.data.resultCode === 0) this.props.deleteTodolist(this.props.id);
-        //     })
-    }
-
-
+    };
 
     changeTask = (taskId: string, obj: object) => {
 
@@ -103,7 +63,7 @@ class TodoList extends React.Component<PropsType, StateType> {
 
     };
     render = () => {
-        let {tasks = []} = this.props
+        let {tasks = []} = this.props;
         return (
             <div className="App">
                 <div className="todoList">
@@ -115,7 +75,6 @@ class TodoList extends React.Component<PropsType, StateType> {
                                     deleteTodolist={this.deleteTodolist}
                                     todoListId={this.props.id}
                                     changeTitleTC={this.props.changeTitleTC}
-                                    //changeTitleTodolist={this.props.changeTitleTodolist}
                         />
 
                     <TodoListTasks
@@ -172,7 +131,7 @@ type PropsType = MapDispatchToPropsType  & OwnPropsType
 
 
 const ConnectedTodoList = connect<null, MapDispatchToPropsType,  OwnPropsType>(null, {
-     changeTitleTodolist, loadTasksThunk, deleteTodolistTC, changeTaskTC, addTaskTC, changeTitleTC})(TodoList)
+     changeTitleTodolist, loadTasksThunk, deleteTodolistTC, changeTaskTC, addTaskTC, changeTitleTC})(TodoList);
 
 export default ConnectedTodoList;
 

@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68d37df7-1cb3-460c-a936-7ef75c3ff8f5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Login.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Root.tsx" afterDir="false" />
+    <list default="true" id="68d37df7-1cb3-460c-a936-7ef75c3ff8f5" name="Default Changelist" comment="Delete debugger">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddNewItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddNewItemForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Button1.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Button1.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoListFooter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListFooter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoListTask.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListTask.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoListTasks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListTasks.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoListTitle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListTitle.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +52,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../project02/social_network" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="E:\FrontDevelop\project01\node_modules\typescript\lib" />
@@ -166,7 +170,17 @@
       <workItem from="1593432684975" duration="972000" />
       <workItem from="1593433667663" duration="785000" />
       <workItem from="1593434495140" duration="28306000" />
-      <workItem from="1594283136823" duration="7901000" />
+      <workItem from="1594283136823" duration="9612000" />
+      <workItem from="1594390659962" duration="35000" />
+      <workItem from="1595160171944" duration="929000" />
+      <workItem from="1595251028962" duration="851000" />
+      <workItem from="1595753398732" duration="617000" />
+      <workItem from="1595829295017" duration="278000" />
+      <workItem from="1595832272485" duration="5000" />
+      <workItem from="1596048255635" duration="83000" />
+      <workItem from="1596189279283" duration="1444000" />
+      <workItem from="1596528391903" duration="628000" />
+      <workItem from="1596697411113" duration="5164000" />
     </task>
     <task id="LOCAL-00001" summary="Connect to server and update data through server">
       <created>1584640665766</created>
@@ -210,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593093086404</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Made login form">
+      <created>1594297845309</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1594297845309</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,17 +256,18 @@
     <MESSAGE value="Rewrite the project in TypeScript" />
     <MESSAGE value="Rewrite the project in TypeScript 2.0" />
     <MESSAGE value="Repair couple mistakes&#10;Set Material UI and rewrite styles" />
-    <option name="LAST_COMMIT_MESSAGE" value="Repair couple mistakes&#10;Set Material UI and rewrite styles" />
+    <MESSAGE value="Made login form" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made login form" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="585" y="115" key="CommitChangelistDialog2" timestamp="1593093085297">
+    <state x="585" y="115" key="CommitChangelistDialog2" timestamp="1594298817951">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1593093085297" />
-    <state x="260" y="282" key="FileChooserDialogImpl" timestamp="1594284171079">
+    <state x="585" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1594298817951" />
+    <state x="260" y="282" key="FileChooserDialogImpl" timestamp="1596048336938">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="260" y="282" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1594284171079" />
+    <state x="260" y="282" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1596048336938" />
     <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1593433657711">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -270,29 +292,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593443533374" />
-    <state x="221" y="155" key="refactoring.ChangeSignatureDialog" timestamp="1586667578586">
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1596190074849">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="221" y="155" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586667578586" />
-    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1592641999042">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1592641999042" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/reducer.ts</url>
-          <line>238</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/reducer.ts</url>
-          <line>259</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1596190074849" />
   </component>
 </project>

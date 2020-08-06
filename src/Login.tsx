@@ -1,6 +1,5 @@
 import React, {ChangeEvent, useState} from "react";
 import {Button, Container, Grid, Paper, TextField} from "@material-ui/core";
-import {api} from "./api";
 import {connect} from "react-redux";
 import {authorizeTC} from "./reducer";
 
@@ -10,20 +9,20 @@ type OwnPropsType = {
 
 const Login = (props: OwnPropsType) => {
 
-    const [email, setEmail] = useState('free@samuraijs.com')
-    const [password, setPassword] = useState('free')
+    const [email, setEmail] = useState<string>('free@samuraijs.com');
+    const [password, setPassword] = useState<string>('free');
 
 
 
     const changeEmail = (e: ChangeEvent<HTMLInputElement>) => {
         setEmail(e.currentTarget.value)
-    }
+    };
     const changePassword = (e: ChangeEvent<HTMLInputElement>) => {
         setPassword(e.currentTarget.value)
-    }
+    };
     const send = () =>{
         props.authorizeTC(email,password)
-    }
+    };
 
     return (
 
